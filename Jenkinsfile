@@ -1,15 +1,11 @@
-pipeline {
-  agent any
-   stages {
-    stage('Docker Build') {
-      steps {
-        sh "docker build -t kmlaydin/podinfo:${env.BUILD_NUMBER} ."
-      }
-    }
+    agent any
     
-    stage('Apply Kubernetes Files') {
-      steps {
-          sh 'kubectl apply -f service.yaml' 
-      }
-    }    
+     stages {
+            stage('Staging') {
+            steps {
+                sh 'sudo docker-compose build'
+                sh 'sudo docker-compose up -d'
+            }
+        }
+     } 
 }
