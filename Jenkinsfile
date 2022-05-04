@@ -7,9 +7,9 @@ pipeline {
             }
          
             stage('Staging') {
-            steps {
+     
                  sh 'kubectl apply -f service.yaml'
-            }
+          
         }
      } 
 }
