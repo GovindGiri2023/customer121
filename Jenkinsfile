@@ -1,5 +1,4 @@
-    agent any
-    
+
      stages {
             stage('Staging') {
             steps {
