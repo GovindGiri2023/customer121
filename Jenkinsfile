@@ -3,6 +3,6 @@ pipeline {
           stages {
             stage('Staging') {
                   steps {
-                      sh 'kubectl apply -f service.yaml'
+                      sh 'sudo kubectl apply -f service.yaml'
                   } }      }
 }
