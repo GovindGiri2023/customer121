@@ -3,7 +3,7 @@ pipeline {
     
     stage('Apply Kubernetes Files') {
       steps {
-          sh 'kubectl apply -f service.yaml  
+          sh 'kubectl apply -f service.yaml' 
       }
     }    
 }
