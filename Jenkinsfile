@@ -3,7 +3,11 @@ pipeline {
           stages {
               stage('Checkout') {
                   steps {
-                      git branch: 'devlopment', credentialsId: '184375ae-eab0-46d1-82c5-82d9726345c1', url: 'https://github.com/govindgiri2021/jenkins.git'
+                      //git branch: 'devlopment', credentialsId: '184375ae-eab0-46d1-82c5-82d9726345c1', url: 'https://github.com/govindgiri2021/jenkins.git'
+                      checkout([
+                               $class: 'GitSCM', branches: [[name: '*/master']],   
+                                userRemoteConfigs: [[url: 'git@github.com:govindgiri2021/jenkins.git',credentialsId:'184375ae-eab0-46d1-82c5-82d9726345c1']]
+                              ])
                       sh 'sudo sh git.sh $ORIGIN $BRANCH'
                   }
               }
