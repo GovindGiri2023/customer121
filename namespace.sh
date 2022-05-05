@@ -5,7 +5,7 @@ MYVARVALUE=$1
 
 # read the yml template from a file and substitute the string
 # {{MYVARNAME}} with the value of the MYVARVALUE variable
-template=`cat "namespace.yaml" | sed "s/{{MYVARNAME}}/$MYVARVALUE/g"`
+template=`cat "namespace.yml" | sed "s/{{MYVARNAME}}/$MYVARVALUE/g"`
 echo "$template" | kubectl apply -f -
 
 template=`cat "deployment.yaml" | sed "s/{{MYVARNAME}}/$MYVARVALUE/g"`
