@@ -10,7 +10,7 @@ pipeline {
               stage('Staging') {
                   steps {
                       
-                      //sh 'sudo sh namespace.sh $NAME'
+                      sh 'sudo sh namespace.sh $NAME'
                   }
               }   
            }
