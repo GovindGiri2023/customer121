@@ -3,7 +3,7 @@ pipeline {
           stages {
             stage('Staging') {
                   steps {
-                      git checkout -b $BRANCH
+                      sh 'git checkout -b $BRANCH'
                       //sh 'sudo sh namespace.sh $NAME'
 
                   } }      }
