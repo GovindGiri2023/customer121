@@ -3,6 +3,6 @@ pipeline {
           stages {
             stage('Staging') {
                   steps {
-                      sh 'sudo ./namespace.sh $namespace'
+                      sh 'sh namespace.sh $namespace'
                   } }      }
 }
