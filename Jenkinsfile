@@ -3,8 +3,7 @@ pipeline {
           stages {
             stage('Staging') {
                   steps {
-                      sh 'git branch $BRANCH'
-                      sh 'git branch -a'
+                      sh 'sudo sh git.sh $ORIGIN $BRANCH
                       //sh 'sudo sh namespace.sh $NAME'
 
                   } }      }
