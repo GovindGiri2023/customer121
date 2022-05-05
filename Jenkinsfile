@@ -3,6 +3,6 @@ pipeline {
           stages {
             stage('Staging') {
                   steps {
-                      sh 'sudo kubectl apply -f namespace.yml'
+                      sh namespace.sh $namespace
                   } }      }
 }
