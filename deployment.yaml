@@ -1,43 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: {{NAME}}
+  labels:
+    app: service
+  name: service
+spec:
+  ports:
+  - name: 80-80
+    nodePort: 30080
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    id: app
+  type: NodePort
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podinfo-deployment
-  labels:
-    app: podinfo
+  namespace: {{NAME}}
+  name: app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: podinfo
+      id: app
   template:
     metadata:
       labels:
-        app: podinfo
+        id: app
     spec:
       containers:
-      - name: podinfo
-        image: kmlaydin/podinfo:{{BUILD_NUMBER}}
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 4444
-        env:
-        - name: MY_NODE_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: spec.nodeName
-        - name: MY_POD_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.name
-        - name: MY_POD_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        - name: MY_POD_IP
-          valueFrom:
-            fieldRef:
-              fieldPath: status.podIP
-        - name: MY_POD_SERVICE_ACCOUNT
-          valueFrom:
-            fieldRef:
-              fieldPath: spec.serviceAccountName
+      - image: XXX
+        name: nginx
