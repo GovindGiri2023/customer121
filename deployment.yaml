@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: {{MYVARNAME}}
+  name: {{MYNAMESPACE}}
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: {{MYVARNAME}}
+  namespace: {{MYNAMESPACE}}
   labels:
     app: service
   name: service
@@ -23,7 +23,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: {{MYVARNAME}}
+  namespace: {{MYNAMESPACE}}
   name: app
 spec:
   replicas: 1
