@@ -36,5 +36,5 @@ spec:
         id: app
     spec:
       containers:
-      - image: XXX
+      - image: nginx
         name: nginx
