@@ -7,6 +7,6 @@ echo "$template" | kubectl apply -f -
 template=`cat "deployment.yaml" | sed "s/{{MYNAMESPACE}}/$MYNAMESPACEVALUE/g"`
 echo "$template" | kubectl apply -f -
 
-MYVARVALUE=$2 
-template=`cat "cafe-ingress.yaml" | sed "s/{{MYNAMESPACE}}/$MYNAMESPACEVALUE/g"`
+DOMAINVALUE=$2 
+template=`cat "cafe-ingress.yaml" | sed "s/{{MYNAMESPACE}}/$MYNAMESPACEVALUE/g;s/{{DOMAIN}}/$DOMAINVALUE/g"`
 echo "$template" | kubectl apply -f -
