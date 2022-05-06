@@ -10,7 +10,7 @@ spec:
     - cafe.example.com
     secretName: cafe-secret
   rules:
-  - host: cafe.example.com
+  - host: {{DOMAIN}}
     http:
       paths:
       - path: /tea
