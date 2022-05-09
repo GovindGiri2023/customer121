@@ -5,7 +5,7 @@ pipeline {
               stage('Creating GIt Repo') {
                   steps {
                       
-                      sh 'sudo sh gitbranch.sh $User_name $GIT_Token $Repo_name '
+                      sh 'sudo sh gitbranch.sh $USER_NAME $GIT_TOKEN $REPO_NAME '
                   }
               }  
          
