@@ -8,7 +8,7 @@ pipeline {
                       sh 'sudo sh namespace.sh $NAME $DOMAIN'
                   }
               }  
-              stage('Change namespaces') {
+              stage('New port number') {
                   steps {
                       
                       sh 'sudo sh SG_Update.sh $PORTNUMBER'
