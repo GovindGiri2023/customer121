@@ -1,6 +1,13 @@
 pipeline {
     agent any
           stages {
+              
+              stage('Creating GIt Repo') {
+                  steps {
+                      
+                      sh 'sudo sh gitbranch.sh'
+                  }
+              }  
          
               stage('Change namespaces') {
                   steps {
