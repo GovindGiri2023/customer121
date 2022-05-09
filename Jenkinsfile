@@ -5,7 +5,7 @@ pipeline {
               stage('Change namespaces') {
                   steps {
                       
-                      sh 'sudo sh namespace.sh $NAME $DOMAIN'
+                      sh 'sudo sh namespace.sh $NAME $DOMAIN $PORTNUMBER'
                   }
               }  
               stage('New port number') {
