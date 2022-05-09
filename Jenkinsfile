@@ -3,8 +3,9 @@ pipeline {
           stages {
               stage('Checkout SCM') {
                    steps {
-                      git branch: 'testing', credentialsId: 'Git_hub_id', url: "https://github.com/govindgiri2021/test-kubernetes.git"
-                       sh 'git branch newbranch'
+                      withCredentials([gitUsernamePassword(credentialsId: 'Git_hub_id', gitToolName: 'git-tool')]) {
+                      sh 'git branch'
+                     }
                    }
                }
               stage('Creating GIt Repo') {
