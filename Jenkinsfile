@@ -2,7 +2,9 @@ pipeline {
     agent any
           stages {
               stage('Checkout SCM') {
-               git branch: 'testing', credentialsId: 'Git_hub_id', url: "https://github.com/govindgiri2021/kube.git"
+                   steps {
+                      git branch: 'testing', credentialsId: 'Git_hub_id', url: "https://github.com/govindgiri2021/kube.git"
+                   }
                }
               stage('Creating GIt Repo') {
                   steps {
