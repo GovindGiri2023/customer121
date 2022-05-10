@@ -4,7 +4,7 @@ pipeline {
               stage('Creating new Branch') {
                    steps {
                       withCredentials([gitUsernamePassword(credentialsId: 'Git_hub_id', gitToolName: 'git-tool')]) {
-                      sh 'curl https://api.github.com/user/repos -d '{"name":"'$NAME'"}''
+                      sh " curl https://api.github.com/user/repos -d '{"name":"'$NAME'"}' "
                      }
                    }
                }
