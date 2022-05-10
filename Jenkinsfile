@@ -10,8 +10,7 @@ pipeline {
                           usernameVariable: 'USER'
                            )   ]) 
                         {
-                          sh "echo $USER"
-                          sh 'sudo sh gitbranch.sh $USER $PASSWORD $NAME '
+                          sh 'sudo sh gitbranch.sh $USER $PASSWORD $NAME'
                           
                         }
                   }  
