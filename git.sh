@@ -1,6 +1,14 @@
 #!/usr/bin/env bash 
+username=$1
+password=$2
+reponame=$3
 
-git remote add origin $1
-git branch $2
-
-echo "Done."    
+git config --global user.name $1
+git config --global user.email $4
+git init
+git add .
+git status
+git commit -m "jenkins script commit"
+git remote add origin https://@github.com/$username/$reponame.git
+git checkout -b govind
+git push https://$username:$password@github.com/$username/$reponame.git
