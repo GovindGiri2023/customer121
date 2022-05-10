@@ -10,5 +10,5 @@ git add .
 git status
 git commit -m "jenkins script commit"
 git remote add origin https://@github.com/$username/$reponame.git
-git checkout -b govind
+git checkout -b $reponame
 git push https://$username:$password@github.com/$username/$reponame.git
