@@ -11,6 +11,7 @@ pipeline {
                            )   ]) 
                         {
                           sh 'sudo sh gitbranch.sh $USER $PASSWORD $NAME'
+                          sh 'sudo sh git.sh $USER $PASSWORD $NAME $MAIL'
                           
                         }
                   }  
