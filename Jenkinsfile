@@ -1,10 +1,10 @@
 pipeline {
     agent any
           stages {
-              stage('Checkout SCM') {
+              stage('Creating new Branch') {
                    steps {
                       withCredentials([gitUsernamePassword(credentialsId: 'Git_hub_id', gitToolName: 'git-tool')]) {
-                      sh 'git branch'
+                      sh 'curl https://api.github.com/user/repos -d '{"name":"'$NAME'"}''
                      }
                    }
                }
