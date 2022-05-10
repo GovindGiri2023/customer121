@@ -5,13 +5,14 @@ pipeline {
                     steps {
                           withCredentials([
                           usernamePassword(
-                          credentialsId: "	Git_hub_id",
+                          credentialsId: "username_password_id",
                           passwordVariable: 'PASSWORD',
                           usernameVariable: 'USER'
                            )   ]) 
                         {
-                          sh 'sudo sh gitbranch.sh $USER $PASSWORD $NAME '
                           sh "echo $USER"
+                          sh 'sudo sh gitbranch.sh $USER $PASSWORD $NAME '
+                          
                         }
                   }  
               }
