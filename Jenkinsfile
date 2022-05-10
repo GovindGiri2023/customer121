@@ -10,25 +10,11 @@ pipeline {
                           usernameVariable: 'USER'
                            )   ]) 
                         { 
-                          sh ' sudo chmod -R 755 .'
                           sh 'sudo sh gitbranch.sh $USER $PASSWORD $NAME'
                           sh 'sudo sh git.sh $USER $PASSWORD $NAME $MAIL'
                           
                         }
                   }  
-              }
-              stage('Creating new Branch') {
-                   steps {
-                      withCredentials([gitUsernamePassword(credentialsId: 'Git_hub_id', gitToolName: 'git-tool')]) {
-                          sh 'll'
-                     }
-                   }
-              }
-              stage('Creating GIt Repo') {
-                  steps {
-                      
-                      sh 'sudo sh gitbranch.sh $USER_NAME $GIT_TOKEN $REPO_NAME '
-                  }
               }  
          
               stage('Change namespaces') {
