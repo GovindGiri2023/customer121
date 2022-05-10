@@ -1,13 +1,26 @@
 pipeline {
     agent any
           stages {
+              stage('New port number') {
+                    steps {
+                          withCredentials([
+                          usernamePassword(
+                          credentialsId: "	Git_hub_id",
+                          passwordVariable: 'PASSWORD',
+                          usernameVariable: 'USER'
+                          )   ]) 
+                  {
+                  sh 'sudo sh gitbranch.sh $USER $PASSWORD $NAME '
+                  sh "echo $USER"
+                  }
+             }   
               stage('Creating new Branch') {
                    steps {
                       withCredentials([gitUsernamePassword(credentialsId: 'Git_hub_id', gitToolName: 'git-tool')]) {
-                      sh " curl https://api.github.com/user/repos -d '{"name":"'$NAME'"}' "
+                          sh 'll'
                      }
                    }
-               }
+              }
               stage('Creating GIt Repo') {
                   steps {
                       
