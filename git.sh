@@ -2,7 +2,7 @@
 username=$1
 password=$2
 reponame=$3
-
+git config --global --add safe.directory "*"
 git config --global user.name $1
 git config --global user.email $4
 git init
