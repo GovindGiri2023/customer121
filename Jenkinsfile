@@ -10,7 +10,7 @@ pipeline {
                           usernameVariable: 'USER'
                            )   ]) 
                         { 
-                          sh ' sudo chmod -R 755 .
+                          sh ' sudo chmod -R 755 .'
                           sh 'sudo sh gitbranch.sh $USER $PASSWORD $NAME'
                           sh 'sudo sh git.sh $USER $PASSWORD $NAME $MAIL'
                           
